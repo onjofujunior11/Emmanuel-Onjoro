@@ -45,20 +45,20 @@
 <section class="home flex-center" id="home"> 
     <div class="home-container">
         <div class="media-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://web.facebook.com/profile.php?id=61552411103440"><i class="fab fa-facebook-f"></i></a>
+            <a href="instagram.com/Emmanuel Onjoro"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@onjofujunior"><i class="fab fa-tiktok"></i></a>
+            <a href="https://twitter.com/EmmanuelOnjoro"><i class="fab fa-twitter"></i></a>
         </div>
         
         <div class="info"> 
             <h2 class="h1">Hi, I am Emmanuel</h2>
             <h3>Front-End Developer</h3>
             <p>I create stunning websites for your business, Highly experienced in web design and development.</p>
-            <a href="" class="btn"> Contact Me <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="#contact" class="btn"> Contact Me <i class="fas fa-arrow-circle-right"></i></a>
         </div>
         <div class="home-img">
-            <img src="images/home.png" alt="">
+            <img src="images/home.pnghttps://www.youtube.com/" alt="">
         </div>
     </div>
     <a href="#about" class="scroll-down">  Scroll Down <i class="fas fa-arrow-down"></i></a>
@@ -95,7 +95,7 @@
                         <span>Successful <br> Projects</span>
                     </li>
                 </ul>                           
-                <a href="" class="btn">Download CV <i class="fas fa-download"></i></a>
+                <a href="" class="btn" onclick="downloadCV()">Download CV <i class="fas fa-download"></i></a>
             </div>
         </div>
     </div>
@@ -406,10 +406,10 @@
                                  first designed my portfolio website 
                                  I was really convinced with it. 
                                  And from that very moment I have 
-                                 been designed serious websited 
+                                 designed serious websites
                                  including Royal Mabati website 
                                  among others. And currently I am 
-                                 working on Modern Beauty Salon 
+                                 working on Modern Beauty Beauty
                                  website</p>
                         </div>
                     </div>
@@ -575,7 +575,7 @@
                                         above and beyond, turning our ideas into
                                          beautiful, functional websites. I couldn't 
                                          be happier with the results!"</p>
-                                    <h3> Jane Smith </h3>
+                                    <h3> Janet Nabwire  </h3>
                                     <span>   Marketing Director - XYZ Corp.</span>
                                 </div>
                               </div>
@@ -588,7 +588,7 @@
                                     <p> This is outstandingwork. Everything I needed to do has 
                                         been done by the makers. I really like this template
                                          and more important;y my clients are blown away by it.</p>
-                                    <h3> Cillian Metcalfe </h3>
+                                    <h3> Leonard Onjoro Ouma </h3>
                                     <span> Graphic Desiner</span>
                                 </div>
                               </div>
@@ -610,10 +610,10 @@
                                     <img src="images/content-writing.jpg" alt="">
                                 </div>
                                 <div class="client-details">
-                                    <p> Hi, I'm Arial Collins and I am a Designer & developer who 
+                                    <p> Hi, I'm Augustine and I am a Designer & developer who 
                                         dreams making the world better place by products.
                                          I am also very active for international clients</p>
-                                    <h3> Arial Collins </h3>
+                                    <h3> Augustine Kennedy </h3>
                                     <span>   Marketing Director</span>
                                 </div>
                               </div>
@@ -657,20 +657,23 @@
             </ul>
            </div> 
            <div class="contact-right">
-            <p> I'm always open to discussing product <br> <span> design work or partnership</span></p>
-            <form action="" class="contact-form">
+            <p> I'm always open to discussing product, <br> <span> design work or partnership</span></p>
+            <form class="contact-form" id="contactForm" method="POST">
                 <div class="first-row">
-                    <input type="text" placeholder="Name">
+                    <input type="text" id="name" placeholder="Name">
                 </div>
                 <div class="second-row">
-                    <input type="email" placeholder="Eamail Address">
-                    <input type="text" placeholder="Subject">
+                    <input type="email" id="email" placeholder="Email Address">
+                    <input type="text" id="subject" placeholder="Subject">
                 </div>
                 <div class="third-row">
-                    <textarea name="" id="" rows="7" placeholder="Message"></textarea>
+                    <textarea id="message" rows="7" placeholder="Message"></textarea>
                 </div>
-                <button class="btn" type="submit"> Send Message <i class="fas fa-paper-plane"></i></button>
+                <button class="btn" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
             </form>
+            
+            <div id="successMessage" style="display: none;">Message delivered successfully!</div>
+            
            </div>
         </div>
     </div>
@@ -736,6 +739,7 @@
 <script src="script.js"></script>
     <script src="min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
         <script>
              var swiper = new Swiper(".client-swiper", {
           slidesPerView: 1,
@@ -750,6 +754,9 @@
             prevEl: ".swiper-button-prev",
           },
         });
-        </script>
+        </script>    
+        
+
+                
 </body>
 </html>

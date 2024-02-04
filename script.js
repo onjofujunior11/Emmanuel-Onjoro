@@ -156,33 +156,41 @@ ScrollReveal().reveal('.experience-card, service-card, .education, .portfolio .i
 ScrollReveal().reveal('footer .group', { delay: 500, origin: 'top', interval : 200});
 
 
-// resume script
-
-// JavaScript for toggling between full and summarized resume
-function toggleResume() {
-    const fullResume = document.getElementById("full-resume");
-    const summaryResume = document.getElementById("summary-resume");
-    const toggleButton = document.getElementById("toggle-resume");
-
-    if (fullResume.style.display === "none") {
-        fullResume.style.display = "block";
-        summaryResume.style.display = "none";
-        toggleButton.innerText = "View Summarized Resume";
-    } else {
-        fullResume.style.display = "none";
-        summaryResume.style.display = "block";
-        toggleButton.innerText = "View Full Resume";
-    }
-}
 
 
-// script.js
-const toggleButtons = document.querySelectorAll('.toggle-details');
 
-toggleButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const details = button.previousElementSibling;
-        details.style.display = details.style.display === 'none' ? 'block' : 'none';
-    });
+function downloadCV() {
+    // Replace 'path/to/your-cv-file.pdf' with the actual path to your CV file on your server
+    var cvUrl = "documents/My Resume-1.pdf";
+    var link = document.createElement('a');
+    link.href = cvUrl;
+    link.download = 'My Resume-1.pdf'; // The name of the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+
+//  contact form actions
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var subject = document.getElementById("subject").value;
+    var message = document.getElementById("message").value;
+
+    // Simulate sending email
+    setTimeout(function() {
+        document.getElementById("successMessage").style.display = "block";
+        clearForm();
+    }, 2000);
 });
 
+function clearForm() {
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("message").value = "";
+}
