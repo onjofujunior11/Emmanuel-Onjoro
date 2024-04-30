@@ -1,4 +1,5 @@
-// Navigation bar effects on scroll
+//  Navigation bar effects on scroll
+
 window.addEventListener("scroll", function () {
     const header = document.querySelector("header");
     header.classList.toggle("sticky", window.scrollY > 0);
@@ -94,10 +95,10 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(current => {
         let sectionHeight = current.offsetHeight;
-        let sectionTop = current.offsetTop - 50;
+        let sectionTop = current.offsetHeight - 50;
         let id = current.getAttribute("id");
 
-        if(scrollY > sectionTop && scrollY <= sectiontop + sectionHeight){
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
             document.querySelector(".nav-items a[href*=" + id + "]").classList.add("active");
         }
         else{
@@ -124,7 +125,7 @@ closeBtn.addEventListener("click", () => {
 
 
 navItems.forEach((navItem) => {
-    navItem.addEventListener("click", () => {
+    navItems.addEventListener("click", () => {
         navigation.classList.remove("active");
     })
 })
@@ -138,7 +139,7 @@ navItems.forEach((navItem) => {
 // Common reveal options to create reveal animations
 ScrollReveal({
     reset: true,
-    disptance: '60px',
+    distance: '60px',
     duration: 2500,
     delay: 100
 });
@@ -161,10 +162,10 @@ ScrollReveal().reveal('footer .group', { delay: 500, origin: 'top', interval : 2
 
 function downloadCV() {
     // Replace 'path/to/your-cv-file.pdf' with the actual path to your CV file on your server
-    var cvUrl = "documents/My Resume-1.pdf";
+    var cvUrl = "documents/EMMANUEL ONJORO - CV.pdf";
     var link = document.createElement('a');
     link.href = cvUrl;
-    link.download = 'My Resume-1.pdf'; // The name of the downloaded file
+    link.download = 'EMMANUEL ONJORO - CV.pdf'; // The name of the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -173,24 +174,48 @@ function downloadCV() {
 
 //  contact form actions
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault();
+// document.getElementById("contactForm").addEventListener("submit", function(event) {
+//     event.preventDefault();
 
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var subject = document.getElementById("subject").value;
-    var message = document.getElementById("message").value;
+//     var name = document.getElementById("name").value;
+//     var email = document.getElementById("email").value;
+//     var subject = document.getElementById("subject").value;
+//     var message = document.getElementById("message").value;
 
-    // Simulate sending email
-    setTimeout(function() {
-        document.getElementById("successMessage").style.display = "block";
-        clearForm();
-    }, 2000);
-});
+//     // Simulate sending email
+//     setTimeout(function() {
+//         document.getElementById("successMessage").style.display = "block";
+//         clearForm();
+//     }, 2000);
+// });
 
-function clearForm() {
-    document.getElementById("name").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("subject").value = "";
-    document.getElementById("message").value = "";
+// function clearForm() {
+//     document.getElementById("name").value = "";
+//     document.getElementById("email").value = "";
+//     document.getElementById("subject").value = "";
+//     document.getElementById("message").value = "";
+// }
+
+
+
+
+var userName = document.getElementById('name').value;
+var subject = document.getElementById('subject').value;
+var emailEl = document.getElementById('email').value;
+var messageEl = document.getElementById('message')
+
+var messageBody = "Name " + userName + "phone " + Phone + "Email " + emailEl;
+
+function emailSend(){
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "emmanuelonjoro@gmail.com",
+        Password : "ABC7B1474CBAD52BED82B3D76183FBC35DF8",
+        To : 'eonjoro36@gmail.com',
+        From : "emmanuelonjoro@gmail.com",
+        Subject : subject,
+        Body : messageBody
+    }).then(
+      message => alert(message)
+    );
 }
